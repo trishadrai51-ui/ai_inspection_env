@@ -1,3 +1,5 @@
+# IMPORTANT FOR OPENENV DETECTION
+__all__ = ["app"]
 from fastapi import FastAPI
 from my_env import SystemInspectionEnv, Action
 
