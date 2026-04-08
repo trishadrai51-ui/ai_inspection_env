@@ -6,24 +6,28 @@ entry_point: my_env:SystemInspectionEnv
 observation_space:
   type: object
   properties:
-    cpu_usage: float
-    memory_usage: float
-    error_rate: float
-    traffic: float
+    cpu_usage:
+      type: number
+    memory_usage:
+      type: number
+    error_rate:
+      type: number
+    traffic:
+      type: number
 
 action_space:
   type: object
   properties:
     decision:
       type: string
-      enum: [ignore, alert, escalate]
+      enum: ["ignore", "alert", "escalate"]
 
-reward_range: [-1, 1]
+reward_range: [-1.0, 1.0]
 
 tasks:
   - name: easy
-    description: Detect critical errors
+    description: Detect high error rate and escalate
   - name: medium
-    description: Handle moderate system alerts
+    description: Use cpu and error rate to decide alert or escalate
   - name: hard
-    description: Complex multi-metric decisions
+    description: Complex multi-metric decision making
