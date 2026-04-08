@@ -1,6 +1,7 @@
 [project]
 name = "ai_inspection_env"
 version = "0.1.0"
+
 dependencies = [
     "openenv-core>=0.2.0",
     "fastapi",
@@ -9,4 +10,4 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "server.app:app"
+serve = "server.app:app"
