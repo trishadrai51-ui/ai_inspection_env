@@ -3,6 +3,9 @@ description: AI system monitoring and incident inspection environment
 
 entry_point: my_env:SystemInspectionEnv
 
+server:
+  entrypoint: server.app:app
+
 observation_space:
   type: object
   properties:
@@ -26,8 +29,5 @@ reward_range: [-1.0, 1.0]
 
 tasks:
   - name: easy
-    description: Detect high error rate and escalate
   - name: medium
-    description: Use cpu and error rate to decide alert or escalate
   - name: hard
-    description: Complex multi-metric decision making
