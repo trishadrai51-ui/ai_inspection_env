@@ -1,0 +1,29 @@
+name: ai_inspection_env
+description: AI system monitoring and incident inspection environment
+
+entry_point: my_env:SystemInspectionEnv
+
+observation_space:
+  type: object
+  properties:
+    cpu_usage: float
+    memory_usage: float
+    error_rate: float
+    traffic: float
+
+action_space:
+  type: object
+  properties:
+    decision:
+      type: string
+      enum: [ignore, alert, escalate]
+
+reward_range: [-1, 1]
+
+tasks:
+  - name: easy
+    description: Detect critical errors
+  - name: medium
+    description: Handle moderate system alerts
+  - name: hard
+    description: Complex multi-metric decisions
